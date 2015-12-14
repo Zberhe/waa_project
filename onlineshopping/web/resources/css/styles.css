@@ -1,15 +1,42 @@
 .preview{
-border:1px solid black;
+    border:1px solid black;
 
 }
 .searchBar .login .welcome{
-     width:33%;
-     float:right;
-   
-    
+    width:33%;
+    float:right;
+
+
+}
+
+/* Overwrite the scrolling of the menu items*/
+.ui-layout-west .ui-layout-unit-content {
+    overflow-x:hidden !important;
+     overflow-y:hidden !important;
+}
+.ui-layout-south .ui-layout-unit-content {
+    overflow-x:hidden !important;
+     overflow-y:hidden !important;
+}
+.ui-layout-north .ui-layout-unit-content {
+    overflow-x:hidden !important;
+     overflow-y:hidden !important;
+}
+/* Overwrite border */
+.ui-layout-pane-south {
+    border: 0;
+}
+.ui-layout-pane-north {
+    border: 0;
+}
+.ui-layout-pane-west {
+    border: 0;
+}
+.ui-layout-pane {
+    border: 0;
 }
 
 .header{
     background-color: aquamarine!important;
-     overflow:hidden;
+    overflow:hidden;
 }

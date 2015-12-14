@@ -17,21 +17,28 @@ import javax.inject.Named;
  */
 @Named
 @SessionScoped
-public class ClothesBean implements Serializable{
-    private List<String[]> clothList = new ArrayList<>();
+public class ClothesBean implements Serializable {
+
+    private List<Clothe> clothList;
+
     public ClothesBean() {
-        clothList.add(new String[]{"../resources/images/dress-05.jpg","../resources/images/dress-06.png"});
+        clothList = new ArrayList<>();
+        // clothList.add(new String[]{"../resources/images/dress-05.jpg","../resources/images/dress-06.png"});
+        clothList.add(new Clothe("dress", "medium", "red", "dress-05.jpg"));
+        clothList.add(new Clothe("dress", "medium", "red", "dress-06.png"));
+          clothList.add(new Clothe("hoodie", "medium", "solid color", "hoodie.jpg"));
 //      
     }
 
-    public List<String[]> getClothList() {
+    public List<Clothe> getClothList() {
         return clothList;
     }
 
-    public void setClothList(List<String[]> clothList) {
+    public void setClothList(List<Clothe> clothList) {
         this.clothList = clothList;
     }
-    public String goToNext(){
+
+    public String goToNext() {
         return "index";
     }
 }
