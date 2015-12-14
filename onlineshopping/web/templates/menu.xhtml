@@ -1,0 +1,36 @@
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+
+
+    <h:form>     
+
+        <p:panelMenu style="width:300px">
+            <p:submenu label="Car for Sale">
+                <p:menuitem value="Toyota" actionListener="#{menuView.save}"  />
+                <p:menuitem value="ACURA" actionListener="#{menuView.update}"   />
+            </p:submenu>
+            <p:submenu label="Books for Sale">
+                <p:menuitem value="Compro Books" actionListener="#{menuView.delete}" icon="ui-icon-document
+                            " />
+                <p:menuitem value="MBA Books" actionListener="#{menuView.delete}" icon="ui-icon-document
+                            " />
+                <p:menuitem value="Vedic Science Books" actionListener="#{menuView.delete}" icon="ui-icon-document
+                            " />  
+                <p:menuitem value="Litrature Books" actionListener="#{menuView.delete}" icon="ui-icon-document
+                            "/>
+            </p:submenu>        
+            <p:submenu label="Clothes for Sale" >
+
+                <p:menuitem value="Men" outcome="/pages/page1.xhtml" icon="ui-icon-star"/>
+                <p:menuitem value="Women" url="http://www.primefaces.org/documentation" icon="ui-icon-star" />
+                <p:menuitem value="Kids" url="http://www.primefaces.org/downloads"  icon="ui-icon-star" />                </p:submenu>
+
+
+        </p:panelMenu>
+    </h:form>
+</ui:composition>
+
