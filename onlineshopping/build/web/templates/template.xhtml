@@ -9,12 +9,13 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title></title>
-
+       
+        <h:outputStylesheet library="css" name="styles.css"/>
         <h:head>
 
-            <p:layout fullPage="true" resizeTitle="resize" style="background-color: #f1f1f1">
+            <p:layout fullPage="true" resizeTitle="resize">
 
-                <p:layoutUnit position="north" size="68" id="north" style="background-color: #f1f1f1" >
+                <p:layoutUnit position="north" size="60" id="north" styleClass="header" >
                     <ui:include src="header.xhtml" />
                 </p:layoutUnit>
 
@@ -29,8 +30,6 @@
                     </h:form>
                 </p:layoutUnit>
 
-                <p:layoutUnit position="east" size="0" style="width:0px; display:none;" id="east">
-                </p:layoutUnit>
 
                 <p:layoutUnit position="south" resizable="true" id="south">
                     <ui:include src="footer.xhtml" />
