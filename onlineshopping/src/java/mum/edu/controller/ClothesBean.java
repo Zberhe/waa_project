@@ -20,14 +20,23 @@ import javax.inject.Named;
 public class ClothesBean implements Serializable {
 
     private List<Clothe> clothList;
+    private Clothe selected;
 
     public ClothesBean() {
         clothList = new ArrayList<>();
         // clothList.add(new String[]{"../resources/images/dress-05.jpg","../resources/images/dress-06.png"});
         clothList.add(new Clothe("dress", "medium", "red", "dress-05.jpg"));
         clothList.add(new Clothe("dress", "medium", "red", "dress-06.png"));
-          clothList.add(new Clothe("hoodie", "medium", "solid color", "hoodie.jpg"));
+        clothList.add(new Clothe("hoodie", "medium", "solid color", "hoodie.jpg"));
 //      
+    }
+
+    public Clothe getSelected() {
+        return selected;
+    }
+
+    public void setSelected(Clothe selected) {
+        this.selected = selected;
     }
 
     public List<Clothe> getClothList() {

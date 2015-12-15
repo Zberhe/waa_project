@@ -11,7 +11,9 @@
             <p:column>
 
                 <h:panelGrid columns="1">
-                    <p:graphicImage value="../resources/images/#{clothe.imgName}"/>
+                    <p:commandLink action="index"> 
+                        <p:graphicImage value="../resources/images/#{clothe.imgName}"/>
+                    </p:commandLink>
                     <h:outputText value="#{clothe.size}" /> 
 
                     <h:outputText value="#{clothe.color}"/>
@@ -25,19 +27,27 @@
             </p:column>
         </p:dataGrid>
 
-        <!--        <p:dataTable var="name" value="# {clothesBean.clothList}">
-                    <p:column>
-        
-                        <p:commandLink action="index"> <p:graphicImage value="# {name[0]}" />
-                        </p:commandLink>
-        
-        
-                    </p:column>
-                    <p:column>
-        
-                        <p:graphicImage value="# {name[1]}" />
-                    </p:column>
-                </p:dataTable>-->
+        <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+            <p:outputPanel id="carDetail" style="text-align:center;">
+                <p:panelGrid  columns="2" rendered="#{not empty clothesBean.selected}" columnClasses="label,value">
+                    <f:facet name="header">
+                        <p:graphicImage name="../resources/images/#{clothesBean.selected.imgName}"/> 
+                    </f:facet>
+
+                    <h:outputText value="Id:" />
+                    <h:outputText value="#{clothesBean.selected.name}" />
+
+                    <h:outputText value="size" />
+                    <h:outputText value="#{clothesBean.selected.color}" />
+
+                    <h:outputText value="Color:" />
+                    <h:outputText value="#{clothesBean.selected.color}" style="color:#{clothesBean.selected.color}"/>
+
+                    <h:outputText value="Price" />
+                    <h:outputText value="$#{dataGridView.selectedCar.price}" />
+                </p:panelGrid>
+            </p:outputPanel>
+        </p:dialog>
 
     </ui:define>
 </ui:composition>
