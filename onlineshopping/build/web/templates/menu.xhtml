@@ -10,11 +10,11 @@
 
         <p:panelMenu style="width:300px">
             <p:submenu label="Car for Sale">
-                <p:menuitem value="Toyota" actionListener="#{menuView.save}"  />
-                <p:menuitem value="ACURA" actionListener="#{menuView.update}"   />
+                <p:menuitem value="Toyota" outcome="/pages/toyotaCars.xhtml"  />
+                <p:menuitem value="ACURA" outcome="/pages/fileUpload.xhtml"   />
             </p:submenu>
             <p:submenu label="Books for Sale">
-                <p:menuitem value="Compro Books" actionListener="#{menuView.delete}" icon="ui-icon-document
+                <p:menuitem value="Compro Books" outcome="/pages/javaBook.xhtml" icon="ui-icon-document
                             " />
                 <p:menuitem value="MBA Books" actionListener="#{menuView.delete}" icon="ui-icon-document
                             " />

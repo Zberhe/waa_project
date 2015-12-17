@@ -1,0 +1,49 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/templates/template.xhtml">
+    <ui:define name="metadata">
+    </ui:define>
+   <ui:define name="content">
+             <h:form prependId="true" enctype="multipart/form-data">
+            <p:fileUpload id="txtCatImage"
+                          value="#{fileUploadView.file}"
+                          mode="advanced"
+                          dragDropSupport="true"
+                          fileLimit="1"
+                          sizeLimit="100000"
+                          multiple="false"
+                          allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+                          fileUploadListener="#{fileUploadView.listener}"/>
+
+            <p:message for="txtCatImage" showSummary="false"/>
+            <p:commandButton id="btnSubmit" 
+                             actionListener="#{fileUploadView.upload}" 
+                             ajax="true" icon="ui-icon-check" value="Save"/>                
+        </h:form>
+
+
+            </ui:define>
+
+  
+
+</ui:composition>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

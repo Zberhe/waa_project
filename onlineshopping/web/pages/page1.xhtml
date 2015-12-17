@@ -11,43 +11,26 @@
             <p:column>
 
                 <h:panelGrid columns="1">
-                    <p:commandLink action="index"> 
+                    <h:commandLink action="viewDetails"  > 
+                        <f:setPropertyActionListener value="#{clothe}" target="#{clothesBean.selectedClothe}" />
                         <p:graphicImage value="../resources/images/#{clothe.imgName}"/>
-                    </p:commandLink>
-                    <h:outputText value="#{clothe.size}" /> 
+                       
+                       
+                    </h:commandLink>
+                 
+<!--                    <h:outputText value="# {clothe.size}" /> 
 
-                    <h:outputText value="#{clothe.color}"/>
-                    <p:commandLink  title="View Detail">
-                        <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;" />
-                        <f:setPropertyActionListener value="#{clothe}" target="#{clothesBean.selected}" />
-                    </p:commandLink>
+                    <h:outputText value="# {clothe.color}"/>-->
+<!--                    <p:commandLink  title="View Detail">
+                      
+                        <f:setPropertyActionListener value="# {clothe}" target="# {clothesBean.selected}" />
+                    </p:commandLink>-->
                 </h:panelGrid>
 
 
             </p:column>
         </p:dataGrid>
 
-        <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-            <p:outputPanel id="carDetail" style="text-align:center;">
-                <p:panelGrid  columns="2" rendered="#{not empty clothesBean.selected}" columnClasses="label,value">
-                    <f:facet name="header">
-                        <p:graphicImage name="../resources/images/#{clothesBean.selected.imgName}"/> 
-                    </f:facet>
-
-                    <h:outputText value="Id:" />
-                    <h:outputText value="#{clothesBean.selected.name}" />
-
-                    <h:outputText value="size" />
-                    <h:outputText value="#{clothesBean.selected.color}" />
-
-                    <h:outputText value="Color:" />
-                    <h:outputText value="#{clothesBean.selected.color}" style="color:#{clothesBean.selected.color}"/>
-
-                    <h:outputText value="Price" />
-                    <h:outputText value="$#{dataGridView.selectedCar.price}" />
-                </p:panelGrid>
-            </p:outputPanel>
-        </p:dialog>
-
+  
     </ui:define>
 </ui:composition>

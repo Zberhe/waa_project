@@ -1,0 +1,35 @@
+<!DOCTYPE  html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <h:form>
+
+        <div class="welcome">
+            Welcome to  Associates Shop !
+        </div>
+
+        <div class="searchBar">
+            <h:selectOneMenu value="#{searchBn.selectedItem}" styleClass="category">
+                <f:selectItem itemValue="Books" itemLabel="Books"/>
+                <f:selectItem itemValue="Cars" itemLabel="Cars"/>
+                <f:selectItem itemValue="Clothes" itemLabel="Clothes"/>
+            </h:selectOneMenu>
+
+            <h:inputText value="#{searchBn.enteredText}" label="search" styleClass="search" />
+
+            <h:commandButton value="Search" action="#{searchBn.viewSearch()}" styleClass="searchBtn"/>
+
+        </div>
+        <h:outputText value="#{msg.welcomemsg}#{loginBean.userName}"/>
+        <div style="float:right;margin-top: 10px">
+        
+        <h:commandButton  value="Logout"  styleClass="logoutBtn" action ="#{loginBean.logout}"/>
+        <span class="postBtn"> <h:commandButton  value="Post" action ="#{loginBean.post}"/> </span>
+        </div>
+
+    </h:form>
+
+</ui:composition>
+

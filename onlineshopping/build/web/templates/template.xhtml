@@ -6,17 +6,22 @@
         xmlns:f="http://java.sun.com/jsf/core">
 
     <f:view contentType="text/html" id="fview">
+        <f:event type="preRenderView" listener="# {loginBean.loginListener(event)}" />
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title></title>
-       
+
         <h:outputStylesheet library="css" name="styles.css"/>
         <h:head>
 
             <p:layout fullPage="true" resizeTitle="resize">
 
                 <p:layoutUnit position="north" size="60" id="north" styleClass="header" >
-                    <ui:include src="header.xhtml" />
+
+                    <ui:insert name="header">
+                        <ui:include src="/sections/categories/header.xhtml"/>
+                    </ui:insert>
+
                 </p:layoutUnit>
 
                 <p:layoutUnit position="west" id="west" resizable="false" header="#{msg['menu.title']}" style="height:580px;overflow:hidden;" size="225">

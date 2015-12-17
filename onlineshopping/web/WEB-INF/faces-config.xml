@@ -3,14 +3,33 @@
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
-  <context-param>
-    <param-name>primefaces.FONT_AWESOME </param-name>
-    <param-value>true</param-value>
-  </context-param>
+    <context-param>
+        <param-name>primefaces.FONT_AWESOME </param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <render-kit>
+        <renderer>
+            <component-family>org.primefaces.component</component-family>
+            <renderer-type>org.primefaces.component.FileUploadRenderer</renderer-type>
+            <renderer-class>mum.edu.controller.MyFileUploadRenderer</renderer-class>
+        </renderer>
+    </render-kit>
+    <context-param>
+        <param-name>primefaces.UPLOADER</param-name>
+        <param-value>commons</param-value>
+    </context-param>
     <application>
-    <resource-bundle>
-      <base-name>mum.edu.controller.messages</base-name>
-      <var>msg</var>
-    </resource-bundle>
-  </application>
+        <resource-bundle>
+            <base-name>mum.edu.controller.messages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>mum.edu.controller.postErrors</base-name>
+            <var>err</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>mum.edu.controller.labels</base-name>
+            <var>lab</var>
+        </resource-bundle>
+    </application>
 </faces-config>

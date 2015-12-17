@@ -8,12 +8,15 @@
     <head> <title> online shopping</title> </head>
     <h:body>
 
-<ui:composition template="templates/template.xhtml">
-	<ui:define name="metadata">
-	</ui:define>
-	<ui:define name="content">
-		Center content not center!!!!!!!!!!!!!!!!!!!!!
-	</ui:define>
-</ui:composition>
+        <ui:composition template="templates/template.xhtml">
+            <ui:define name="metadata">
+            </ui:define>
+            <ui:define name="header">
+                <ui:include src="/sections/login/header.xhtml" />
+            </ui:define>
+            <ui:define name="content">
+                Welcome to the store
+            </ui:define>
+        </ui:composition>
     </h:body>
 </html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"        
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://primefaces.org/ui"
+       xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="styles.css"/>
+
+    </h:head>
+    <body>
+        <div class="post">
+            <div class="postform">
+                <h2>FILL ALL NECESSARY FIELDS</h2>
+                <h:form id="register" enctype="multipart/form-data">       
+                    <div class="person">  
+
+                        <p><h:outputText styleClass="label" value="#{lab.username}"/>
+                            <h:inputText id="username" value="#{registerBean.userName}" styleClass="inputField" required="true" requiredMessage="#{err.fname}"/>                 
+                        </p>
+                        <p><h:message for="register:username" style="color:red"></h:message></p>
+
+                        <p><h:outputText styleClass="label" value="#{lab.password}"/>
+                            <h:inputSecret id="password" value="#{registerBean.password}" styleClass="inputField" required="true" requiredMessage="#{err.fname}"/>                 
+                        </p>
+                        <p><h:message for="register:password" style="color:red"></h:message></p>
+
+
+                        <p><h:outputText styleClass="label" value="#{lab.fname}"/>
+                            <h:inputText id="fname" value="#{registerBean.fname}" styleClass="inputField" required="true" requiredMessage="#{err.fname}"/>                 
+                        </p>
+                        <p><h:message for="register:fname" style="color:red"></h:message></p>
+                        <p><h:outputText id="lname" styleClass="label" value="#{lab.lname}"/>
+                            <h:inputText value="#{registerBean.lname}" styleClass="inputField" required="true" requiredMessage="#{err.lname}"/></p>
+                        <p><h:message for="register:lname" style="color:red; text-align:center"></h:message></p>
+                        <p><h:outputText id="email" styleClass="label" value="#{lab.email}"/>
+                            <h:inputText value="#{registerBean.email}" styleClass="inputField"  required="true" requiredMessage="#{err.email}"/></p>
+                        <p><h:message for="register:email" style="color:red; text-align:center;"></h:message></p>
+                        <p><h:outputText id="phone" styleClass="label" value="#{lab.phone}"/>
+                            <h:inputText value="#{registerBean.phone}" styleClass="inputField"  required="true" requiredMessage="#{err.phone}"/></p> 
+                        <p><h:message for="register:phone" style="color:red; text-align:center;"></h:message></p>
+                    </div>
+                    <div class="address">
+                        <p><h:outputText styleClass="label" value="#{lab.street}"/>
+                            <h:inputText value="#{registerBean.street}" styleClass="inputField"/></p>
+                        <p><h:outputText styleClass="label" value="#{lab.city}"/>
+                            <h:inputText value="#{registerBean.city}" styleClass="inputField"/></p>
+                        <p><h:outputText styleClass="label" value="#{lab.state}"/>
+                            <h:inputText value="#{registerBean.state}" styleClass="inputField"/></p>
+                        <p><h:outputText styleClass="label" value="#{lab.zip}"/>
+                            <h:inputText value="#{registerBean.zip}" styleClass="inputField"/></p> 
+                    </div>   
+                    <p class="label"><h:commandButton action="#{registerBean.register()}" value="Register" styleClass="label" style="background-color:lightsteelblue;margin-left:100px;margin-top:5px;"/></p>
+
+                </h:form>
+            </div>
+        </div>
+    </body>
+</html>

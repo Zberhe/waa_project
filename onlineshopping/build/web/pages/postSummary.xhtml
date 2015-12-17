@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Post Summary</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <body>
+       
+        <div class="postSummary postform">
+             <h2>Summary of posted item</h2>
+            <h:dataTable styleClass="table" value="#{postBean.postedProduct}" var="item">
+                <h:column headerClass="cat">
+                    <f:facet name="header">#{postBean.summaryColumn1}</f:facet>
+                    #{item[0]}
+                </h:column >  
+                 <h:column headerClass="cat">
+                    <f:facet name="header">#{postBean.summaryColumn2}</f:facet>
+                    #{item[1]}
+                </h:column>
+                 <h:column headerClass="cat">
+                    <f:facet name="header">#{postBean.summaryColumn3}</f:facet>
+                    #{item[2]}
+                </h:column>
+                 <h:column headerClass="cat">
+                    <f:facet name="header">#{postBean.summaryColumn4}</f:facet>
+                    #{item[3]}
+                </h:column>
+            </h:dataTable>
+        </div>
+    </body>
+</html>

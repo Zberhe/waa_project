@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"        
+       xmlns:h="http://java.sun.com/jsf/html"       
+       xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <body>
+        <div class="post">
+            <div class="postform">
+                <h2>Fill out the form to post your product</h2> 
+                <h:form id="post" enctype="multipart/form-data"> 
+                    <div class="product">
+                        <p><h:outputText  
+                                styleClass="label" value="#{lab.category}"/>
+                            <h:selectOneMenu 
+                                id="category" value="#{postBean.selectedCategory}" 
+                                styleClass="inputField">
+                                <f:ajax 
+                                    event="change" execute="@this" render="@all" 
+                                    listener="#{postBean.isCloth}"/>
+                                <f:selectItems value="#{postBean.categories}"/>                                
+                            </h:selectOneMenu></p>
+
+                        <p><h:outputText  
+                                styleClass="label" value="#{postBean.label}" 
+                                rendered="#{postBean.renderSize}"/>
+                            <h:selectOneMenu 
+                                id="size" value="#{postBean.selectedSize}"
+                                rendered="#{postBean.renderSize}" styleClass="inputField">
+                                <f:selectItems 
+                                    value="#{postBean.sizeOrModel}"/>                            
+                            </h:selectOneMenu></p> 
+
+                        <p><h:outputText  
+                                styleClass="label" value="#{postBean.label}"
+                                rendered="#{postBean.authorOn}"/>
+                            <h:inputText 
+                                id="author" value="#{postBean.author}" styleClass="inputField" 
+                                required="true" requiredMessage="#{err.itemName}" 
+                                rendered="#{postBean.authorOn}"/></p>
+                        <p><h:message 
+                                for="post:author" style="color:red; text-align:center;">
+                            </h:message></p>                    
+                        <p><h:outputText  
+                                styleClass="label" value="#{postBean.itemName}"/>
+                            <h:inputText
+                                id="itemName" value="#{postBean.itemName}" styleClass="inputField" 
+                                required="true" requiredMessage="#{err.itemName}"/></p>
+                        <p><h:message 
+                                for="post:itemName" style="color:red; text-align:center;">                                
+                            </h:message></p>
+
+                        <p><h:outputText 
+                                id="price" styleClass="label" value="#{lab.price}"/>
+                            <h:inputText 
+                                value="#{postBean.price}" styleClass="inputField" 
+                                required="true" requiredMessage="#{err.price}"/></p>
+                        <p><h:message 
+                                for="post:price" style="color:red; text-align:center;">
+                            </h:message></p>
+                    </div>
+                    <!-- <p><h:outputText styleClass="label" value="# {lab.photo}"/><h:inputFile value="# {postBean.photoName}" styleClass="inputField"/></p>-->
+                    <p class="label"><h:commandButton action="#{postBean.processPost}" value="Post your Product" styleClass="label" style="background-color:lightsteelblue;margin-left:100px;margin-top:5px;"/></p>
+
+                </h:form>
+            </div>
+        </div>
+    </body>
+</html>

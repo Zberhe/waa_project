@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/templates/template.xhtml">
+    <ui:define name="metadata">
+    </ui:define>
+    <ui:define name="header">
+        <ui:include src="/sections/login/header.xhtml" />
+    </ui:define>
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid>
+                <p:outputLabel value="Name"/>
+                <p:inputText id = "username" value="#{loginBean.userName}" />
+                <p:outputLabel value="Password"/>
+                <p:password  value="#{loginBean.password}" />
+            </h:panelGrid>
+            <p:commandButton ajax="false" value="Login" action="#{loginBean.checkLogin()}"/> <br/><br/>
+            <h:outputText value="The username and password combination provided is not valid." 
+        style="color:red"   rendered="#{loginBean.error}"/>
+        </h:form>
+
+    </ui:define>
+</ui:composition>

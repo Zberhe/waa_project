@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:f="http://java.sun.com/jsf/core">
+    <head> <title> online shopping</title> </head>
+    <h:body>
+       
+       <ui:composition template="/templates/template.xhtml">
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+                
+		Hey, check out what we have found for you in our current database:
+                
+                <p:dataTable value="#{searchBn.foundClothes}" var="acloth">
+                    <p:column headerText="Section">
+                        
+                        #{acloth.name}
+                        
+                    </p:column>
+                    
+<!--                    <p:column headerText="Section">
+                        
+                        # {acloth.section}
+                    </p:column>-->
+                    <p:column headerText="Size">
+                        
+                        #{acloth.size}
+                    </p:column>
+                    <p:column headerText="Price">
+                        
+                        #{acloth.price}
+                    </p:column>
+                    
+                                
+                </p:dataTable>
+                
+	</ui:define>
+</ui:composition>
+    </h:body>
+</html>

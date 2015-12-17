@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/templates/template.xhtml">
+    <ui:define name="metadata">
+    </ui:define>
+    <ui:define name="content">
+        <p:dataGrid var="car" value="#{carBean.carList}" columns="2"  rows="4" paginator="true"
+                    paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                    paginatorPosition="top"
+                    rowsPerPageTemplate="4,8,12">           
+
+            <p:column>
+
+
+                <h:commandLink action="toyotaCarDetails.xhtml"> 
+                    <f:setPropertyActionListener value="#{car}" target="#{carBean.selectedCar}" />
+                    <p:graphicImage value="../resources/images/cars/toyota/#{car.image}"/>
+
+
+                </h:commandLink>
+
+            </p:column>
+        </p:dataGrid>
+
+
+    </ui:define>
+</ui:composition>
