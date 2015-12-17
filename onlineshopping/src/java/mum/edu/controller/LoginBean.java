@@ -116,7 +116,7 @@ public class LoginBean implements Serializable {
     public String logout() {
         isLoggedOn = false;
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-        return "/index?faces-redirect=true";
+        return "/pages/login?faces-redirect=true";
 
     }
 

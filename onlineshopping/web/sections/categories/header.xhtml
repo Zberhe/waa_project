@@ -23,7 +23,8 @@
 
         </div>
         <h:outputText value="#{msg.welcomemsg}#{loginBean.userName}"/>
-        <div style="float:right;margin-top: 10px">
+        <div style="float:right;margin-top: 10px;">
+            
         
             <h:commandLink  value="#{loginBean.loginOrLogout}"  styleClass="logoutBtn" action ="#{loginBean.logout}"/>
         <span class="postBtn"> <h:commandLink  value="Post" action ="#{loginBean.post}"/> </span>
