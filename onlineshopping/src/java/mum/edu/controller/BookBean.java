@@ -6,11 +6,10 @@
 package mum.edu.controller;
 
 import mum.edu.model.Book;
-import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import mum.edu.model.Sellers;
+import mum.edu.model.Products;
 
 /**
  *
@@ -24,7 +23,7 @@ public class BookBean {
     private Book selectedBook;
 
     public BookBean() {
-    bookList= Sellers.getBooks();
+    bookList= Products.getBooks();
     }
 
     public List<Book> getBookList() {

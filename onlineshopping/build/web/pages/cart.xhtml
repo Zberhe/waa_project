@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable     value = "#{bookCart.cart}" var = "i"
+                             border="1"  cellpadding = "7px"
+                             style="border-collapse: collapse">
+                <h:column>
+                    <f:facet name ="header">Name</f:facet>
+                        #{i.b.name}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                    $#{i.b.price}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Quantity</f:facet>
+                    <h:inputText value="#{i.quantity}" style ="width: 20px">
+                        <f:ajax event ="blur" execute="@all" render="@all" listener="#{bookCart.update(event)}" />
+                    </h:inputText>
+
+                </h:column>
+
+
+                <h:column>
+                    <f:facet name="header">Picture</f:facet>
+                    <h:graphicImage library="images"
+                                    name="#{i.b.image}"
+                                    width="120px" height="120px"/>
+
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                    <h:commandButton value="delete"
+                                     action="#{bookCart.remove(i)}"/>
+                </h:column>
+                <f:facet name="footer">Total: $#{bookCart.total}</f:facet>
+            </h:dataTable> 
+
+            <h:commandButton value="Payement"
+                             action="#{bookCart.payment()}"/>
+            <br/>
+            <h:link outcome="javaBook" value="Continue Shopping"/>
+        </h:form>  
+
+    </h:body>
+</html>
+

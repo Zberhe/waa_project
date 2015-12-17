@@ -17,9 +17,16 @@
 
                 <h:commandLink action="bookDetails"  > 
                     <f:setPropertyActionListener value="#{book}" target="#{bookBean.selectedBook}" />
-                    <p:graphicImage value="../resources/images/books/#{book.image}"/>
+                    <p:graphicImage value="../resources/images/#{book.image}"/>
 
-                </h:commandLink>
+                </h:commandLink><br/>
+                Name:  <h:outputText value="#{book.author}"/>  <br/>
+                Price: <h:outputText value="#{book.name}"/> <br/>
+                Post Id: <h:outputText value="#{book.postId}"/><br/>
+
+                <h:commandButton value="Add to cart"
+                                 action ="#{bookCart.addtoCart(book)}">
+                </h:commandButton>
 
             </p:column>
         </p:dataGrid>

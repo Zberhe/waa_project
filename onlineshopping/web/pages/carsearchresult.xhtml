@@ -18,7 +18,13 @@
                 <p:dataTable value="#{searchBn.foundCars}" var="acar">
                     <p:column headerText="Make">
 
-                        #{acar.make}
+                      
+                        <h:commandLink action="toyotaCarDetails"  > 
+                            <f:setPropertyActionListener value="#{acar}" target="#{carBean.selectedCar}" />
+                             #{acar.model}
+
+
+                        </h:commandLink>
 
                     </p:column>
 

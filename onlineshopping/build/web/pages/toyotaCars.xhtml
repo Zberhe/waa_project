@@ -17,10 +17,13 @@
 
                 <h:commandLink action="toyotaCarDetails.xhtml"> 
                     <f:setPropertyActionListener value="#{car}" target="#{carBean.selectedCar}" />
-                    <p:graphicImage value="../resources/images/cars/toyota/#{car.image}"/>
+                    <p:graphicImage value="../resources/images/#{car.image}"/>
 
 
                 </h:commandLink>
+                 <h:commandButton value="Add to cart"
+                                 action ="#{bookCart.addtoCart(book)}">
+                </h:commandButton>
 
             </p:column>
         </p:dataGrid>

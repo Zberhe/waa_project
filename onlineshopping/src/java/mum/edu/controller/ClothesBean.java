@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
-import mum.edu.model.Sellers;
+import mum.edu.model.Products;
 
 /**
  *
@@ -25,7 +25,7 @@ public class ClothesBean implements Serializable {
     private Cloth selectedClothe;
 
     public ClothesBean() {
-      clothList = Sellers.getClothes();        
+      clothList = Products.getClothes();        
     }
 
     public Cloth getSelectedClothe() {

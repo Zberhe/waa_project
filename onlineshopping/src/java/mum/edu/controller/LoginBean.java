@@ -27,6 +27,19 @@ public class LoginBean implements Serializable {
     private String password;
     private boolean isLoggedOn = false;
     private boolean error = false;
+    private String loginOrLogout = "login";
+
+    public String getLoginOrLogout() {
+        if (isLoggedOn) {
+            return "Logout";
+        } else {
+            return "login";
+        }
+    }
+
+    public void setLoginOrLogout(String loginOrLogout) {
+        this.loginOrLogout = loginOrLogout;
+    }
 
     public boolean isIsLoggedOn() {
         return isLoggedOn;

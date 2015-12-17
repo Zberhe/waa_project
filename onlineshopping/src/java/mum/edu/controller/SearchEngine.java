@@ -13,7 +13,7 @@ import javax.inject.Named;
 import mum.edu.model.Book;
 import mum.edu.model.Car;
 import mum.edu.model.Cloth;
-import mum.edu.model.Sellers;
+import mum.edu.model.Products;
 
 /**
  *
@@ -76,10 +76,10 @@ public class SearchEngine implements Serializable {
         foundBooks.clear();
         if (selectedItem.equals("Books")) {
 
-            for (Book b : Sellers.getBooks()) {
+            for (Book b : Products.getBooks()) {
 
                 if (b.getName().toLowerCase().contains(enteredText.toLowerCase()) || b.getAuthor().toLowerCase().contains(enteredText.toLowerCase())) {
-                    System.out.println("I found it");
+                    ;
                     foundBooks.add(b);
 
                 }
@@ -90,19 +90,27 @@ public class SearchEngine implements Serializable {
         } else if (selectedItem.equals("Cars")) {
             foundCars.clear();
 
-            for (Car c : Sellers.getCars()) {
-                if (c.getMake().contains(enteredText) || c.getModel().contains(enteredText) || c.getYear() == Integer.parseInt(enteredText)) {
-                    foundCars.add(c);
+            for (Car c : Products.getCars()) {
+                try {
+                    int price = Integer.parseInt(enteredText);
+                    if (c.getYear() == price) {
+                        foundCars.add(c);
+
+                    }
+                } catch (NumberFormatException e) {
+                    if (c.getMake().toLowerCase().contains(enteredText.toLowerCase()) || c.getModel().toLowerCase().contains(enteredText.toLowerCase())) {
+                        foundCars.add(c);
+
+                    }
 
                 }
-
             }
             return "/pages/carsearchresult";
         } else if (selectedItem.equals("Clothes")) {
             foundClothes.clear();
 
-            for (Cloth cl : Sellers.getClothes()) {
-                if (cl.getName().contains(enteredText)) {
+            for (Cloth cl : Products.getClothes()) {
+                if (cl.getCategory().toLowerCase().contains(enteredText.toLowerCase())) {
                     foundClothes.add(cl);
 
                 }

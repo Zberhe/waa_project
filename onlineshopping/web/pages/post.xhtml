@@ -46,7 +46,7 @@
                                 for="post:author" style="color:red; text-align:center;">
                             </h:message></p>                    
                         <p><h:outputText  
-                                styleClass="label" value="#{postBean.itemName}"/>
+                                styleClass="label" value="#{postBean.sam}"/>
                             <h:inputText
                                 id="itemName" value="#{postBean.itemName}" styleClass="inputField" 
                                 required="true" requiredMessage="#{err.itemName}"/></p>
@@ -64,7 +64,7 @@
                             </h:message></p>
                     </div>
                     <!-- <p><h:outputText styleClass="label" value="# {lab.photo}"/><h:inputFile value="# {postBean.photoName}" styleClass="inputField"/></p>-->
-                    <p class="label"><h:commandButton action="#{postBean.processPost}" value="Post your Product" styleClass="label" style="background-color:lightsteelblue;margin-left:100px;margin-top:5px;"/></p>
+                    <p class="label"><h:commandButton action="#{postBean.processPost}" value="Upload Picture" styleClass="label" style="background-color:lightsteelblue;margin-left:100px;margin-top:5px;"/></p>
 
                 </h:form>
             </div>

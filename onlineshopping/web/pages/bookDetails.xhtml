@@ -13,7 +13,7 @@
             </ui:define>
             <ui:define name="content">
                 <div class="left-div">
-                    <p:graphicImage value="../resources/images/books/#{bookBean.selectedBook.image}"/>
+                    <p:graphicImage value="../resources/images/#{bookBean.selectedBook.image}"/>
                 </div>
 
                 <h:panelGrid columns="2" class="right-div">
@@ -23,6 +23,9 @@
                     Post Id: <h:outputText value="#{bookBean.selectedBook.postId}"/>
 
                 </h:panelGrid>
+                <h:commandButton value="Add to cart"
+                                 action ="#{bookCart.addtoCart(selectedBook)}"/>
+
 
 
             </ui:define>

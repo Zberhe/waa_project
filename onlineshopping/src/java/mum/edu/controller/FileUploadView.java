@@ -16,21 +16,31 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
 
 @Named
-@RequestScoped
+@SessionScoped
 public class FileUploadView implements Serializable {
+// @Inject
+// private PostBean postBean;
 
     private UploadedFile file;
-     private String destination="C:\\Users\\lenovo\\Documents\\GitHub\\waa_project\\onlineshopping\\web\\resources\\images\\cars\\";
+//    FacesContext context = FacesContext.getCurrentInstance();
 
+    private String destination = "C:\\Users\\lenovo\\Documents\\GitHub\\waa_project\\onlineshopping\\web\\resources\\images\\";
+
+//    public void setPostBean(PostBean postBean) {
+//        this.postBean = postBean;
+//    }
     public UploadedFile getFile() {
         return file;
     }
@@ -39,25 +49,22 @@ public class FileUploadView implements Serializable {
         this.file = file;
     }
 
-    public void upload() {
-        if (file != null) {
-
-            FacesMessage message = new FacesMessage("Succesful", file.getFileName() + " is uploaded.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
-        } else {
-            System.out.println("kkkmkkk");
-        }
+    public String back() {
+        return "postSummary?faces-redirect=true";
     }
 
-    public void listener(FileUploadEvent event) {
-        file = event.getFile();
-        FacesMessage message = new FacesMessage("Succesful", file.getFileName() + " is uploaded.");
-        FacesContext.getCurrentInstance().addMessage(null, message);
-        try {
-            copyFile(event.getFile().getFileName(), event.getFile().getInputstream());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+  public void listener(FileUploadEvent event) {
+
+                file = event.getFile();
+                FacesMessage message = new FacesMessage("Succesful", file.getFileName() + " is uploaded.");
+                FacesContext.getCurrentInstance().addMessage(null, message);
+                try {
+                    copyFile(event.getFile().getFileName(), event.getFile().getInputstream());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                FacesContext.getCurrentInstance().responseComplete();
+                
     }
 
     public void copyFile(String fileName, InputStream in) {
@@ -72,7 +79,6 @@ public class FileUploadView implements Serializable {
             while ((read = in.read(bytes)) != -1) {
                 out.write(bytes, 0, read);
             }
-
             in.close();
             out.flush();
             out.close();

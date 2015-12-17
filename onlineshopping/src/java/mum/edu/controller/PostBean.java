@@ -15,7 +15,7 @@ import javax.inject.Named;
 import mum.edu.model.CarModel;
 import mum.edu.model.Category;
 import mum.edu.model.IcreateObjects;
-import mum.edu.model.Sellers;
+import mum.edu.model.Products;
 import mum.edu.model.SizeConstants;
 
 @Named
@@ -25,22 +25,25 @@ public class PostBean implements Serializable {
     private String category;
     private String itemName = "Section";
     private String author;
-    private String makeup;
+    private String make ="Make:";
     private String size;
     private double price;
     private String image;
-    private String selectedCategory = "cloth";
+    private String selectedCategory = "car";
     private String selectedSize;
     //car  proporties
     private String selectedModel;
     private int mileage;
     private int postId;
     private int year;
+    private String sam = "Make:";
+    
+    
 
-    private String label = "Size:";
+    private String label = "Model:";
     private List<String> categories = Category.retrieveCategoryNames();
     private List<String> sizeOrModel = SizeConstants.retrieveSize();
-    private IcreateObjects seller = new Sellers();
+    private IcreateObjects seller = new Products();
     private boolean renderSize = true;
     private boolean authorOn = false;
 
@@ -52,7 +55,7 @@ public class PostBean implements Serializable {
 
     public String processPost() {
 
-        if (selectedCategory.equals("cloth") || selectedCategory.equals("car")) {
+       
             setRenderSize(true);
             switch (selectedCategory) {
                 case "car":
@@ -99,22 +102,22 @@ public class PostBean implements Serializable {
                 default:
                     break;
             }
-        }
-        return "postSummary?faces-redirect=true";
+        
+        return "fileUpload?faces-redirect=true";
     }
 
     public void isCloth(AjaxBehaviorEvent e) {
         switch (selectedCategory) {
             case "cloth":
                 label = "Size:";
-                itemName = "Section:";
+                sam = "Section:";
                 sizeOrModel = SizeConstants.retrieveSize();
                 setRenderSize(true);
                 setAuthorOn(false);
                 break;
             case "car":
                 label = "Model:";
-                itemName = "Makeup:";
+                sam = "Make:";
                 sizeOrModel = CarModel.retrieveModel();
                 setRenderSize(true);
                 setAuthorOn(false);
@@ -122,7 +125,7 @@ public class PostBean implements Serializable {
             case "book":
                 setRenderSize(false);
                 label = "Title:";
-                itemName = "Author:";
+                sam = "Author:";
                 setAuthorOn(true);
                 break;
             default:
@@ -157,6 +160,15 @@ public class PostBean implements Serializable {
     public String getSummaryColumn4() {
         return summaryColumn4;
     }
+
+    public String getSam() {
+        return sam;
+    }
+
+    public void setSam(String sam) {
+        this.sam = sam;
+    }
+    
 
     public void setSummaryColumn4(String summaryColumn4) {
         this.summaryColumn4 = summaryColumn4;
@@ -361,15 +373,15 @@ public class PostBean implements Serializable {
     /**
      * @return the makeup
      */
-    public String getMakeup() {
-        return makeup;
+    public String getMake() {
+        return make;
     }
 
     /**
-     * @param makeup the makeup to set
+     * @param make the make to set
      */
-    public void setMakeup(String makeup) {
-        this.makeup = makeup;
+    public void setMake(String make) {
+        this.make = make;
     }
 
     /**

@@ -16,14 +16,25 @@ public class Cloth {
     private String imgName;
     private double price;
     private int postId;
+    private String category;
 
-    public Cloth(String name, String size, String imgName, double price, int postId) {
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+    
+
+    public Cloth(String name, String size, String imgName, double price, int postId,String category) {
 
         this.name = name;
         this.size = size;
         this.imgName = imgName;
         this.price = price;
         this.postId = postId;
+        this.category = category;
     }
 
     public int getPostId() {

@@ -7,38 +7,43 @@
         xmlns:f="http://java.sun.com/jsf/core">
     <head> <title> online shopping</title> </head>
     <h:body>
-       
-       <ui:composition template="/templates/template.xhtml">
-	<ui:define name="metadata">
-	</ui:define>
-	<ui:define name="content">
-                
-		Hey, check out what we have found for you in our current database:
-                
+
+        <ui:composition template="/templates/template.xhtml">
+            <ui:define name="metadata">
+            </ui:define>
+            <ui:define name="content">
+
+                Hey, check out what we have found for you in our current database:
+
                 <p:dataTable value="#{searchBn.foundClothes}" var="acloth">
                     <p:column headerText="Section">
-                        
-                        #{acloth.name}
-                        
+                        <h:commandLink action="viewDetails"  > 
+                            <f:setPropertyActionListener value="#{acloth}" target="#{clothesBean.selectedClothe}" />
+                            #{acloth.category}
+
+
+                        </h:commandLink>
+
+
                     </p:column>
-                    
-<!--                    <p:column headerText="Section">
-                        
-                        # {acloth.section}
-                    </p:column>-->
+
+                    <!--                    <p:column headerText="Section">
+                                            
+                                            # {acloth.section}
+                                        </p:column>-->
                     <p:column headerText="Size">
-                        
+
                         #{acloth.size}
                     </p:column>
                     <p:column headerText="Price">
-                        
+
                         #{acloth.price}
                     </p:column>
-                    
-                                
+
+
                 </p:dataTable>
-                
-	</ui:define>
-</ui:composition>
+
+            </ui:define>
+        </ui:composition>
     </h:body>
 </html>

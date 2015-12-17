@@ -14,17 +14,14 @@
             </ui:define>
             <ui:define name="content">
                 <div class="left-div">
-                    <p:graphicImage value="../resources/images/cars/toyota/#{carBean.selectedCar.image}"/>
+                    <p:graphicImage value="../resources/images/#{carBean.selectedCar.image}"/>
                 </div>
-
                 <h:panelGrid columns="2" class="right-div">
-
                     Name:  <h:outputText value="#{carBean.selectedCar.mileage}"/>  
                     Price: <h:outputText value="#{carBean.selectedCar.price}"/>
                     Post Id: <h:outputText value="#{carBean.selectedCar.postId}"/>
 
                 </h:panelGrid>
-
 
             </ui:define>
         </ui:composition>

@@ -8,7 +8,7 @@ package mum.edu.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sellers implements IcreateObjects {
+public class Products implements IcreateObjects {
 
     private static List<Book> books = new ArrayList();
     private static List<Car> cars = new ArrayList();
@@ -30,9 +30,9 @@ public class Sellers implements IcreateObjects {
         books.add(new Book("Java Beans ", 40, "java4.jpg", 2553,"Abc A."));
         books.add(new Book("Core Java an Integrated Approach", 40, "java5.jpg", 2553,"Smith A. Snow"));
         //clothes initializers
-        clothes.add(new Cloth("men", "medium", "dress-05.jpg", 253.50, 2535));
-        clothes.add(new Cloth("men", "medium", "dress-06.png", 285.60, 2536));
-        clothes.add(new Cloth("men", "medium", "hoodie.jpg", 600.20, 2563));
+        clothes.add(new Cloth("Women", "medium", "dress-05.jpg", 253.50, 2535,"Dress"));
+        clothes.add(new Cloth("Women", "medium", "dress-06.png", 285.60, 2536,"Dress"));
+        clothes.add(new Cloth("Women", "medium", "hoodie.jpg", 600.20, 2563,"Hoodie"));
 
     }
 

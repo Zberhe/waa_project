@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import mum.edu.model.Sellers;
+import mum.edu.model.Products;
 
 /**
  *
@@ -25,7 +25,7 @@ public class CarBean implements Serializable {
     private Car selectedCar;
 
     public CarBean() {
-        carList = Sellers.getCars();
+        carList = Products.getCars();
 
     }
 
