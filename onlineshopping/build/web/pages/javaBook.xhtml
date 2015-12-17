@@ -7,27 +7,30 @@
     <ui:define name="metadata">
     </ui:define>
     <ui:define name="content">
+
         <p:dataGrid var="book" value="#{bookBean.bookList}" columns="3"  rows="3" paginator="true"
                     paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                     paginatorPosition="top"
-                    rowsPerPageTemplate="4,8,12">           
+                    rowsPerPageTemplate="6,8,12">           
 
             <p:column>
 
 
-                <h:commandLink action="bookDetails"  > 
-                    <f:setPropertyActionListener value="#{book}" target="#{bookBean.selectedBook}" />
-                    <p:graphicImage value="../resources/images/#{book.image}"/>
 
-                </h:commandLink><br/>
-                Name:  <h:outputText value="#{book.author}"/>  <br/>
-                Price: <h:outputText value="#{book.name}"/> <br/>
-                Post Id: <h:outputText value="#{book.postId}"/><br/>
+                <p:graphicImage value="../resources/images/#{book.image}"/>
 
+                <div class="details">
+                    <h:panelGrid columns="2" >
+                        Author:  <h:outputText value="#{book.author}"/> 
+                        Title:  <h:outputText value="#{book.title}"/>  
+                        Price: <h:outputText value="#{book.price}"/> 
+                        Post Id: <h:outputText value="#{book.postId}"/>
+                    </h:panelGrid>
+                </div>
+                <br/>
                 <h:commandButton value="Add to cart"
                                  action ="#{bookCart.addtoCart(book)}">
                 </h:commandButton>
-
             </p:column>
         </p:dataGrid>
 

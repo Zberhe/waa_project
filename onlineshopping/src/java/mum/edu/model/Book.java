@@ -11,31 +11,31 @@ package mum.edu.model;
  */
 public class Book {
 
-    private String name;
+    private String title;
     private double price;
     private String image;
     private int postId;
 
     private String author;
 
-    public static Book createBook(String name, double price, String image, int postId,String author) {
-        return new Book(name, price, image, postId,author);
+    public static Book createBook(String title, double price, String image, int postId,String author) {
+        return new Book(title, price, image, postId,author);
     }
 
-    public Book(String name, double price, String image, int postId,String author) {
-        this.name = name;
+    public Book(String title, double price, String image, int postId,String author) {
+        this.title = title;
         this.price = price;
         this.image = image;
         this.postId = postId;
         this.author = author;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public double getPrice() {
@@ -72,3 +72,4 @@ public class Book {
     
 
 }
+    

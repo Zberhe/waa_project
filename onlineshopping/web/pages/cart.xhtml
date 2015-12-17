@@ -5,53 +5,56 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
     </h:head>
-    <h:body>
-        <h:form>
-            <h:dataTable     value = "#{bookCart.cart}" var = "i"
-                             border="1"  cellpadding = "7px"
-                             style="border-collapse: collapse">
-                <h:column>
-                    <f:facet name ="header">Name</f:facet>
-                        #{i.b.name}
-                </h:column>
+    <h:body style="background-color: lightsteelblue">
+        <div class="javabook">
+            <h:form>
 
-                <h:column>
-                    <f:facet name="header">Price</f:facet>
-                    $#{i.b.price}
-                </h:column>
+                <h:dataTable     value = "#{bookCart.cart}" var = "i"
+                                 border="1"  cellpadding = "7px"
+                                 style="border-collapse: collapse; " class="cartdetails">
+                    <h:column>
+                        <f:facet name ="header">Title</f:facet>
+                            #{i.b.title}
+                    </h:column>
 
-                <h:column>
-                    <f:facet name="header">Quantity</f:facet>
-                    <h:inputText value="#{i.quantity}" style ="width: 20px">
-                        <f:ajax event ="blur" execute="@all" render="@all" listener="#{bookCart.update(event)}" />
-                    </h:inputText>
+                    <h:column>
+                        <f:facet name="header">Price</f:facet>
+                        $#{i.b.price}
+                    </h:column>
 
-                </h:column>
+                    <h:column>
+                        <f:facet name="header">Quantity</f:facet>
+                        <h:inputText value="#{i.quantity}" style ="width: 20px">
+                            <f:ajax event ="blur" execute="@all" render="@all" listener="#{bookCart.update(event)}" />
+                        </h:inputText>
+
+                    </h:column>
 
 
-                <h:column>
-                    <f:facet name="header">Picture</f:facet>
-                    <h:graphicImage library="images"
-                                    name="#{i.b.image}"
-                                    width="120px" height="120px"/>
+                    <h:column>
+                        <f:facet name="header">Picture</f:facet>
+                        <h:graphicImage library="images"
+                                        name="#{i.b.image}"
+                                        width="120px" height="120px"/>
 
-                </h:column>
+                    </h:column>
 
-                <h:column>
-                    <f:facet name="header">Action</f:facet>
-                    <h:commandButton value="delete"
-                                     action="#{bookCart.remove(i)}"/>
-                </h:column>
-                <f:facet name="footer">Total: $#{bookCart.total}</f:facet>
-            </h:dataTable> 
-
-            <h:commandButton value="Payement"
-                             action="#{bookCart.payment()}"/>
-            <br/>
-            <h:link outcome="javaBook" value="Continue Shopping"/>
-        </h:form>  
-
+                    <h:column>
+                        <f:facet name="header">Action</f:facet>
+                        <h:commandButton value="delete"
+                                         action="#{bookCart.remove(i)}"/>
+                    </h:column>
+                    <f:facet name="footer">Total: $#{bookCart.total}</f:facet>
+                </h:dataTable> 
+                <br/>
+                <h:commandButton value="Payement"
+                                 action="#{bookCart.payment()}" style="margin-right: 5px"/>
+              
+                <h:button outcome="javaBook" value="Continue Shopping"/>
+            </h:form>  
+        </div>
     </h:body>
 </html>
 

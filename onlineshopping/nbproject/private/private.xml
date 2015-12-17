@@ -4,15 +4,32 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/controller/LoginBean.java</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/pages/payment.xhtml</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/sections/login/header.xhtml</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/controller/SearchEngine.java</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/pages/fileUpload.xhtml</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/pages/cart.xhtml</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/controller/BookBean.java</file>
             <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/pages/post.xhtml</file>
             <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/sections/categories/header.xhtml</file>
-            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/sections/login/header.xhtml</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/templates/menu.xhtml</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/pages/bookDetails.xhtml</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/model/BookItem.java</file>
             <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/controller/PostBean.java</file>
-            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/controller/labels.properties</file>
             <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/index.xhtml</file>
-            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/templates/template.xhtml</file>
-            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/resources/css/styles.css</file>
-            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/WEB-INF/faces-config.xml</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/model/ClothItem.java</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/model/Book.java</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/pages/toyotaCars.xhtml</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/controller/CarShopingCartBn.java</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/model/Cloth.java</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/pages/postSummary.xhtml</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/pages/viewDetails.xhtml</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/controller/BookShopingCartBn.java</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/pages/page1.xhtml</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/controller/FileUploadView.java</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/model/CarItem.java</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/src/java/mum/edu/controller/RegisterBean.java</file>
+            <file>file:/C:/Users/lenovo/Documents/GitHub/waa_project/onlineshopping/web/pages/javaBook.xhtml</file>
         </group>
     </open-files>
 </project-private>

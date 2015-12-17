@@ -78,7 +78,7 @@ public class SearchEngine implements Serializable {
 
             for (Book b : Products.getBooks()) {
 
-                if (b.getName().toLowerCase().contains(enteredText.toLowerCase()) || b.getAuthor().toLowerCase().contains(enteredText.toLowerCase())) {
+                if (b.getTitle().toLowerCase().contains(enteredText.toLowerCase()) || b.getAuthor().toLowerCase().contains(enteredText.toLowerCase())) {
                     ;
                     foundBooks.add(b);
 

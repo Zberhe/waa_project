@@ -68,7 +68,7 @@ public class BookShopingCartBn implements Serializable {
         }
     }
   public String payment(){
-    return "/pages/payment";
+    return "/pages/payment"+"?faces-redirect=true";
     }
 }
 

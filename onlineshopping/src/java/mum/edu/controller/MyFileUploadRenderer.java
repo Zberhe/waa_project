@@ -20,9 +20,7 @@ public class MyFileUploadRenderer extends FileUploadRenderer {
         if (context.getExternalContext().getRequestContentType().toLowerCase().startsWith("multipart/")) {
             super.decode(context, component);
         }
-        else{
-         System.out.println("sorssry");
-        }
+      
     }
 
 }
